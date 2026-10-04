@@ -73,8 +73,8 @@ robotac-g1-boxing/
 │   └── analyze_fist_traj.py   # 拳速轨迹分析
 ├── patches/          # 对 unitree_rl_mjlab 的修改（见下）
 ├── docs/             # 技术文档
-├── data/             # 示例动作数据
-└── models/           # 导出产物（示例 ONNX）
+├── data/             # 动作数据（Quick_Jab / B_AttackKarate）
+└── models/           # 里程碑模型（.pt + ONNX + 归一化参数，见 models/README.md）
 ```
 
 ---
@@ -145,8 +145,9 @@ python scripts/export_deploy.py <checkpoint.pt> <输出目录>
 
 ## 数据与隐私说明
 
-- 仓库内的动作数据（`data/Quick_Jab_train.npz`）来自 G1 Moves 公开动作数据集，仅用于示例。
-- 训练得到的模型权重（`.pt`）体积较大，未全部入库；`models/` 仅保留一个示例 ONNX 推理产物。
+- 动作数据（`data/*.npz`）来自 G1 Moves 公开动作数据集，仅用于示例复现。
+- 训练权重放在 `models/`：收录 3 个里程碑模型（249999 / 299999 / 330000）的 `.pt` + ONNX + 归一化参数。
+  全部中间 checkpoint（100+ 个）未入库，如需可用 `scripts/export_deploy.py` 自行导出。
 - 本仓库不包含任何个人信息、凭据或本机路径。
 
 ---

@@ -10,9 +10,11 @@ env/
 logs/
 wandb/
 outputs/
-*.pt
 *.pth
 *.ckpt
+# 保留入库的模型权重（models/ 下的 .pt 是精选发布产物）
+*.pt
+!models/**/*.pt
 
 # 力度/实验中间结果
 force_*.json
