@@ -1,0 +1,11 @@
+# 本项目脚本的直接依赖。
+# 完整训练/仿真依赖由 unitree_rl_mjlab 提供（mjlab / MuJoCo / mujoco-warp / RSL-RL / torch）。
+# 请先按 https://github.com/unitreerobotics/unitree_rl_mjlab 安装上游环境。
+
+numpy
+torch
+mujoco>=3.10,<3.11          # 注意：需配合 mujoco-warp；3.10 缺 mjENBL_MULTICCD，脚本内已做兼容
+tyro
+imageio
+imageio-ffmpeg              # imageio 写 mp4 需要
+onnx                        # 校验导出的 ONNX 结构

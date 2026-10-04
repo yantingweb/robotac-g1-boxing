@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 训练与运行产物
+logs/
+wandb/
+outputs/
+*.pt
+*.pth
+*.ckpt
+
+# 力度/实验中间结果
+force_*.json
+force_*.csv
+*.mp4
+
+# 编辑器/系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 助手工作目录
+.workbuddy/
+.claude/
+.cursor/
