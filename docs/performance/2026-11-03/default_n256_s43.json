@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "task": "Mjlab-Tracking-Flat-Unitree-G1-No-State-Estimation",
+  "num_envs": 256,
+  "seed": 43,
+  "warmup": 3,
+  "iterations": 8,
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "versions": {
+    "torch": "2.12.1",
+    "mjlab": "1.2.0",
+    "mujoco": "3.10.0",
+    "mujoco-warp": "3.5.0",
+    "warp-lang": "1.14.0",
+    "rsl-rl-lib": "5.0.1"
+  },
+  "torch_threads": 24,
+  "motion_sha256": "9bf094bbdd65d782163e997c5c38ecd7ff8680b1da792ed32b8e37bdb217c8de",
+  "script_sha256": "02258c2c7062b06bc9c435ece3b3bf58215a4d29339157180c2e050d790d7183",
+  "agent_config": {
+    "seed": 43,
+    "num_steps_per_env": 24,
+    "max_iterations": 30000,
+    "obs_groups": {
+      "actor": [
+        "actor"
+      ],
+      "critic": [
+        "critic"
+      ]
+    },
+    "save_interval": 500,
+    "experiment_name": "g1_tracking",
+    "run_name": "",
+    "logger": "wandb",
+    "wandb_project": "mjlab",
+    "wandb_tags": [],
+    "resume": false,
+    "load_run": ".*",
+    "load_checkpoint": "model_.*.pt",
+    "clip_actions": null,
+    "upload_model": true,
+    "class_name": "OnPolicyRunner",
+    "actor": {
+      "hidden_dims": [
+        512,
+        256,
+        128
+      ],
+      "activation": "elu",
+      "obs_normalization": true,
+      "distribution_cfg": {
+        "init_std": 1.0,
+        "std_type": "scalar"
+      }
+    },
+    "critic": {
+      "hidden_dims": [
+        512,
+        256,
+        128
+      ],
+      "activation": "elu",
+      "obs_normalization": true
+    },
+    "algorithm": {
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "learning_rate": 0.001,
+      "schedule": "adaptive",
+      "gamma": 0.99,
+      "lam": 0.95,
+      "entropy_coef": 0.005,
+      "desired_kl": 0.01,
+      "max_grad_norm": 1.0,
+      "value_loss_coef": 1.0,
+      "use_clipped_value_loss": true,
+      "clip_param": 0.2,
+      "normalize_advantage_per_mini_batch": false,
+      "optimizer": "adam",
+      "rnd_cfg": null,
+      "symmetry_cfg": null
+    },
+    "multi_gpu": null
+  },
+  "rows": [
+    {
+      "iteration": 0,
+      "measured": false,
+      "wall_s": 3.0219227229999888,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 94.08857971429825,
+        "environment": 2358.2850227355957,
+        "storage": 55.69654276967049,
+        "returns": 2.8293440341949463,
+        "update": 508.4812927246094
+      },
+      "mean_step_reward": -0.13095852732658386,
+      "terminations": 534,
+      "losses": {
+        "value": 1.4618821024894715,
+        "surrogate": -0.004405551854870282,
+        "entropy": 41.1544002532959
+      }
+    },
+    {
+      "iteration": 1,
+      "measured": false,
+      "wall_s": 1.856022084000017,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 21.804639995098114,
+        "environment": 1736.9882164001465,
+        "storage": 16.418016016483307,
+        "returns": 2.442431926727295,
+        "update": 76.26866912841797
+      },
+      "mean_step_reward": -0.13828612367312113,
+      "terminations": 403,
+      "losses": {
+        "value": 1.0215266704559327,
+        "surrogate": -0.029566920083016156,
+        "entropy": 41.14956111907959
+      }
+    },
+    {
+      "iteration": 2,
+      "measured": false,
+      "wall_s": 1.7288662800000338,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 21.32991999387741,
+        "environment": 1614.2409553527832,
+        "storage": 15.030463993549347,
+        "returns": 2.4907519817352295,
+        "update": 73.50070190429688
+      },
+      "mean_step_reward": -0.14084240794181824,
+      "terminations": 422,
+      "losses": {
+        "value": 0.9574995100498199,
+        "surrogate": -0.031111498619429766,
+        "entropy": 41.13950748443604
+      }
+    },
+    {
+      "iteration": 3,
+      "measured": true,
+      "wall_s": 1.7775530760000038,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 19.742527961730957,
+        "environment": 1668.5360794067383,
+        "storage": 13.592863887548447,
+        "returns": 2.296895980834961,
+        "update": 71.12422180175781
+      },
+      "mean_step_reward": -0.1360381543636322,
+      "terminations": 395,
+      "losses": {
+        "value": 0.8047634929418563,
+        "surrogate": -0.029316069168271498,
+        "entropy": 41.12887725830078
+      }
+    },
+    {
+      "iteration": 4,
+      "measured": true,
+      "wall_s": 1.7549408219999805,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 23.142783999443054,
+        "environment": 1637.5697402954102,
+        "storage": 16.56336009502411,
+        "returns": 2.361952066421509,
+        "update": 72.82371520996094
+      },
+      "mean_step_reward": -0.12993796666463217,
+      "terminations": 436,
+      "losses": {
+        "value": 0.5217638745903969,
+        "surrogate": -0.030258973623858765,
+        "entropy": 41.116000175476074
+      }
+    },
+    {
+      "iteration": 5,
+      "measured": true,
+      "wall_s": 1.9105313260000116,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 21.576192021369934,
+        "environment": 1788.8941230773926,
+        "storage": 16.269504070281982,
+        "returns": 3.0000319480895996,
+        "update": 77.63375854492188
+      },
+      "mean_step_reward": -0.12616218129793802,
+      "terminations": 418,
+      "losses": {
+        "value": 0.499273282289505,
+        "surrogate": -0.030804346490185708,
+        "entropy": 41.10355167388916
+      }
+    },
+    {
+      "iteration": 6,
+      "measured": true,
+      "wall_s": 1.8004139280000118,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 24.098176181316376,
+        "environment": 1676.755714416504,
+        "storage": 15.63478398323059,
+        "returns": 2.0555520057678223,
+        "update": 79.61068725585938
+      },
+      "mean_step_reward": -0.11269797881444295,
+      "terminations": 487,
+      "losses": {
+        "value": 0.39891488701105116,
+        "surrogate": -0.03056852344125218,
+        "entropy": 41.09204597473145
+      }
+    },
+    {
+      "iteration": 7,
+      "measured": true,
+      "wall_s": 1.8027432040000235,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 21.88128000497818,
+        "environment": 1693.813735961914,
+        "storage": 14.824288070201874,
+        "returns": 2.2087039947509766,
+        "update": 67.8670425415039
+      },
+      "mean_step_reward": -0.10608880718549092,
+      "terminations": 494,
+      "losses": {
+        "value": 0.30633454620838163,
+        "surrogate": -0.028121750662103297,
+        "entropy": 41.079406929016116
+      }
+    },
+    {
+      "iteration": 8,
+      "measured": true,
+      "wall_s": 1.7730009460000247,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 20.84982395172119,
+        "environment": 1657.7860260009766,
+        "storage": 14.940512001514435,
+        "returns": 1.9330240488052368,
+        "update": 75.50886535644531
+      },
+      "mean_step_reward": -0.10064929723739624,
+      "terminations": 535,
+      "losses": {
+        "value": 0.22141866981983185,
+        "surrogate": -0.02943568737246096,
+        "entropy": 41.06358051300049
+      }
+    },
+    {
+      "iteration": 9,
+      "measured": true,
+      "wall_s": 1.7962080400000104,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 22.943968057632446,
+        "environment": 1682.0552444458008,
+        "storage": 16.088160127401352,
+        "returns": 2.53222393989563,
+        "update": 70.46355438232422
+      },
+      "mean_step_reward": -0.09074550867080688,
+      "terminations": 572,
+      "losses": {
+        "value": 0.17612283751368524,
+        "surrogate": -0.029083584481850267,
+        "entropy": 41.04420566558838
+      }
+    },
+    {
+      "iteration": 10,
+      "measured": true,
+      "wall_s": 1.750860366999973,
+      "transitions": 6144,
+      "cuda_span_ms": {
+        "inference": 20.68831992149353,
+        "environment": 1641.9960594177246,
+        "storage": 17.003008127212524,
+        "returns": 2.0914878845214844,
+        "update": 66.74476623535156
+      },
+      "mean_step_reward": -0.0893749197324117,
+      "terminations": 615,
+      "losses": {
+        "value": 0.14746874570846558,
+        "surrogate": -0.026884547888766975,
+        "entropy": 41.022402954101565
+      }
+    }
+  ],
+  "transitions_per_s": 3421.351720380042,
+  "peak_torch_allocated_bytes": 122542592,
+  "peak_torch_reserved_bytes": 136314880,
+  "limitations": [
+    "Random initialization; short training throughput only, not convergence or policy quality.",
+    "CUDA spans include stream idle/host submission gaps; not pure GPU kernel time.",
+    "PyTorch memory excludes Warp and other non-PyTorch allocations.",
+    "Different environment counts change PPO batch size; configurations are not learning-equivalent.",
+    "Current upstream tracking task; historical boxing reward patches/checkpoints are not loaded."
+  ]
+}
